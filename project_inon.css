@@ -1,0 +1,194 @@
+
+
+p {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+
+
+
+
+
+
+.class{
+  background-color: rgb(209, 171, 215);
+}
+h1{
+  color: darkviolet;
+  text-align: center;
+  line-height: 30px; /* ממרכז את הטקסט אנכית */
+  
+}
+#lept { /*כותרת */
+  background-color: aquamarine;
+  color: black;
+  margin: 20px auto;
+  padding: 20px 40px;
+  width: fit-content;
+  text-align: center;
+  border-radius: 12px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid rgba(0, 0, 0, 0.3);
+}
+.G1{
+  background-color: rgb(156, 202, 193);
+  margin: 0;
+  padding: 11px;
+
+  border-radius: 4px;
+  
+  color: black;
+}
+#G2{
+  
+  color: darkcyan;
+  font-family: 'Arial', sans-serif; 
+  line-height: 1.6;
+  text-align: center;
+  padding: 40px 20px; /* מרווח פנימי של 40px למעלה ולמטה ו-20px בצדדים */
+  background-color: brown;
+  margin: 0;
+  padding: 15px;
+}
+#G3{
+  background-color: rgb(173, 125, 186);
+  border-radius: 10px;
+  text-align: center;
+  grid-template-columns: auto;
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  align-items: center;
+  gap: 30px; /* רווח בין הריבועים */
+  flex-wrap: wrap; 
+  margin-top: 40px; /*רווח מךמעלה*/
+  height: 110px; 
+}
+#small-box {
+  width: 120px;
+  height: 80px;
+  background-color: rgb(192, 119, 221);
+  transition-property: width, height, border-radius, background-color;
+  transition-delay: 100ms;
+  transition-duration: 700ms;
+  border-radius: 5px;
+  margin-top: 1px;
+  display: flex; /* הופך את הקופסה למיכל Flexbox */
+  justify-content: center; /* מרכז את הטקסט אופקית */
+  align-items: center; /* מרכז את הטקסט אנכית */
+  font-size: 21px; /* גודל הטקסט */
+  color: white; /* הצבע של הטקסט */
+}
+#small-box:hover{
+  width: 250px;
+  height: 100px;
+  border-radius: 10%;
+  background-color:rgb(65, 5, 64) ;
+}
+a{ 
+  text-decoration: none;
+} 
+/* תפריט הצד - מוסתר מחוץ למסך כברירת מחדל */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -200px;
+  width: 200px;
+  height: 100vh;
+  background-color: #1e1b1b;
+  padding-top: 20px;
+  color: white;
+  transition: left 11.1s ease-in-out;
+  opacity: 0.6; /* מאוד שקוף לפני שנפתח */
+}
+
+/* ידית לפתיחת התפריט */
+.sidebar-handle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  width: 24px;
+  height: 80px;
+  background-color: rgba(34, 34, 34, 0.8); /* חצי שקוף */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: right 0.3s;
+  border-radius: 15%;
+}
+/* פתיחת התפריט כאשר העכבר מגיע לידית */
+.sidebar-handle:hover ~ .sidebar,
+.sidebar:hover {
+  right: 0;
+  transition: right 0.8s ease-in-out, opacity 1s ease-in-out; /* האטה נוספת בעת פתיחה */
+}
+.sidebar:not(:hover) {
+transition: right 1s ease-in-out, opacity 1s ease-in-out; /* האטה גם בסגירה */
+}
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar ul li {
+  padding: 15px;
+  text-align: center;
+}
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-size: 18px;
+  transition: 0.3s;
+}
+.sidebar ul li a:hover {
+  background-color: #2d2a2a3f;
+}
+.content {
+
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  background-color: antiquewhite;
+}
+section {
+  height: 200vh;
+  padding: 20px;
+  
+}
+.UI{
+  color: rebeccapurple;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-top: -10px
+}      
+.bg{
+  margin: 0;
+  padding: 0;
+  direction: rtl; /* כדי שהטקסט יהיה מותאם לימין */
+  background-color: #e28cc7;   /* צבע רקע ללמעלה */
+}
+.vanish{
+  display: inline;
+}
+.clear{
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  padding: 10px 15px;
+  background-color: #df6ebb; /* צבע רקע לכפתור */
+  border-radius: 50px;
+}
+.clear:hover {
+  background-color: #3e103c;
+}
