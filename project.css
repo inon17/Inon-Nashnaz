@@ -1,0 +1,82 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #e2ce8d;
+  margin: 0;
+  padding: 20px;
+}  
+.main-header {
+  background-color: #4CAF50; /* צבע רקע ירוק לכותרת */
+  color: #fff; /* קובע את צבע הטקסט ללבן */
+  text-align: center; /* מרכז את הטקסט בתוך הכותרת */
+  padding: 40px 20px; /* מרווח פנימי של 40px למעלה ולמטה ו-20px בצדדים */
+  margin-bottom: 30px; /* מוסיף רווח של 30px מתחת לכותרת */
+}
+
+header {
+  background-image: url("image\ copy.png");
+  background-size: cover;
+    background-position: center;
+    height: 300px; /* גובה התמונה */
+    position: relative;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.menu {
+  position: absolute;
+  top: 1000%; /* מעלה את התפריט לאמצע התמונה */
+  left: 100%; /* ממרכז את התפריט לרוחב */
+ 
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+
+ 
+}
+
+
+
+
+
+
+.menu a {
+  color: rgb(102, 15, 114);
+  text-transform: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+
+
+
+
+h1 {
+  color: #007bff;
+}
+
+p {
+  font-size: 10px;
+}
+
+button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 2px 25px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: right ;
+ 
+}
+
