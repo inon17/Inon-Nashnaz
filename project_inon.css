@@ -1,17 +1,23 @@
+:root {
 
+  --highlight-color: #000000; /* צבע להדגשות (כמו strong) */
+  --highlight-weight: bold; /* משקל גופן (bold) */
+  --highlight-size: 22px; /* גודל טקסט מודגש */
+}
+
+strong {
+  color: var(--highlight-color); /* צבע טקסט מודגש */
+  font-weight: var(--highlight-weight); /* טקסט עבה יותר */
+  font-size: var(--highlight-size); /* גודל כתב */
+
+   }
 
 p {
   font-size: 18px;
   color: #333;
   line-height: 1.6;
+
 }
-
-
-
-
-
-
-
 .class{
   background-color: rgb(209, 171, 215);
 }
@@ -46,17 +52,32 @@ h1{
   
   color: black;
 }
-#G2{
+
+.G2{
   
-  color: darkcyan;
+  color: black;
   font-family: 'Arial', sans-serif; 
   line-height: 1.6;
-  text-align: center;
-  padding: 40px 20px; /* מרווח פנימי של 40px למעלה ולמטה ו-20px בצדדים */
-  background-color: brown;
-  margin: 0;
-  padding: 15px;
+  text-align: right;
+  padding: 30px 20px; /* מרווח פנימי של 40px למעלה ולמטה ו-20px בצדדים */
 }
+.article-container {
+  max-width: 100%; /* מגביל את הרוחב המקסימלי של המאמר */
+  margin: auto; /* ממקם את המאמר במרכז */
+  background: rgb(77, 197, 111); /* רקע לבן */
+  padding: 30px; /* ריווח פנימי */
+  border-radius: 10px; /* מעגל פינות */
+  text-align: right; /* מיישר את הטקסט לימין */
+  box-shadow: 0px 4px 10px rgba(110, 81, 81,1.1); /* צל עדין */
+  text-align: center;
+  font-family: var(--font-body); /* שימוש בגופן שהגדרנו לטקסט */
+
+}
+
+
+
+
+
 #G3{
   background-color: rgb(173, 125, 186);
   border-radius: 10px;
@@ -152,13 +173,7 @@ transition: right 1s ease-in-out, opacity 1s ease-in-out; /* האטה גם בס�
 .sidebar ul li a:hover {
   background-color: #2d2a2a3f;
 }
-.content {
 
-  padding: 20px;
-  text-align: center;
-  font-size: 30px;
-  background-color: antiquewhite;
-}
 section {
   height: 200vh;
   padding: 20px;
@@ -172,12 +187,18 @@ section {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   margin-top: -10px
 }      
-.bg{
+.bg {
   margin: 0;
   padding: 0;
   direction: rtl; /* כדי שהטקסט יהיה מותאם לימין */
-  background-color: #e28cc7;   /* צבע רקע ללמעלה */
+  background: linear-gradient(
+    to right, /* אפשר להגדיר כיוון, לדוגמה מימין לשמאל */
+    rgb(50, 150, 50), /* צבע שני כדי ליצור מעבר חלק */
+    rgb(156, 255, 73)
+  );
 }
+
+
 .vanish{
   display: inline;
 }
