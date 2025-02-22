@@ -53,13 +53,13 @@ h1{
   color: black;
 }
 
-.G2{
+p{
   
   color: black;
   font-family: 'Arial', sans-serif; 
   line-height: 1.6;
   text-align: right;
-  padding: 30px 20px; /* מרווח פנימי של 40px למעלה ולמטה ו-20px בצדדים */
+  padding: 1% 20px; /* מרווח פנימי של 40px למעלה ולמטה ו-20px בצדדים */
 }
 .article-container {
   max-width: 100%; /* מגביל את הרוחב המקסימלי של המאמר */
@@ -212,4 +212,7 @@ section {
 }
 .clear:hover {
   background-color: #3e103c;
+}
+.TA{
+  text-align: right;
 }
