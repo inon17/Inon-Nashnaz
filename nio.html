@@ -1,94 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Header עם כניסה והרשמה</title>
+    <style>
+        /* עיצוב כללי */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+    width: 100vw;
+    min-height: 100vh; /* מבטיח שהתוכן יתפוס לפחות את כל גובה המסך */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding-top: 70px; /* שומר רווח מתחת לכותרת הקבועה */
+}
+
+
+        /* אזור הכותרת */
+        .header {
+            width: 100%;
+            max-width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, #b972af, #071f38);
+            color: white;
+            padding: 15px 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        /* לוגו */
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            
+        }
+
+        /* אזור הכפתורים */
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* עיצוב הכפתורים */
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        /* כפתור כניסה */
+        .btn-login {
+            background-color: #ffffff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+        .btn-login:hover { 
+            background-color: #ffffff;
+            color: white;
+        }
+
+        /* כפתור הרשמה */
+        .btn-register {
+            background-color: #e63c16;
+            color: white;
+            border: 1px solid #8e6a62;
+        }
+
+        .btn-register:hover {
+            background-color: #000000;
+        }
+
+ 
+
+
+    </style>
 </head>
-<style>
+<html>
 
-:root {
-  /* צבעים כלליים */
-
-  --highlight-color: #e74c3c; /* צבע להדגשות (כמו strong) */
-
-  /* טיפוגרפיה */
-  --font-body: 'Georgia', serif; /* גופן לטקסט רגיל */
-
-  --font-size-base: 18px; /* גודל טקסט רגיל */
-  --font-size-heading: 28px; /* גודל כותרת ראשית */
-  --font-size-subheading: 22px; /* גודל כותרת משנית */
-
-  /* ריווח */
-  --line-height: 1.6; /* גובה שורה כדי לשפר קריאות */
-  --padding-content: 20px; /* ריווח פנימי לכל הדף */
-}
-body {
-  font-family: var(--font-body); /* שימוש בגופן שהגדרנו לטקסט */
-  font-size: var(--font-size-base); /* שימוש בגודל טקסט רגיל */
-  color: var(--primary-color); /* צבע טקסט ראשי */
-  background-color: var(--background-color); /* רקע כללי */
-  line-height: var(--line-height); /* גובה שורה */
-  padding: var(--padding-content); /* ריווח מסביב לכל התוכן */
-  text-align: justify; /* יישור טקסט לצדדים */
-}
-h1, h2, h3 {
-  font-family: var(--font-heading); /* שימוש בגופן מוגדר לכותרות */
-  color: var(--secondary-color); /* צבע שונה לכותרות */
-}
-
-h1 {
-  font-size: var(--font-size-heading); /* גודל כותרת ראשית */
-  text-align: center; /* מיקום הכותרת במרכז */
-  font-weight: bold; /* טקסט עבה יותר */
-}
-
-h2 {
-  font-size: var(--font-size-subheading); /* גודל כותרת משנית */
-  margin-top: 20px; /* ריווח למעלה */
-}
-
-strong {
-  color: var(--highlight-color); /* צבע טקסט מודגש */
-}
+    <div class="container">
+        <!-- כותרת קבועה למעלה -->
+        <div class="header">
+            <div class="logo">האתר שלי</div>
+            <div class="buttons">
+                <a href="login.html" class="btn btn-login">התחבר</a>
+                <a href="register.html" class="btn btn-register">הרשמה</a>
+            </div>
+        </div>
 
 
+    </div>
 
-
-.article-container {
-  max-width: 880px; /* מגביל את הרוחב המקסימלי של המאמר */
-  margin: auto; /* ממקם את המאמר במרכז */
-  background: rgb(169, 150, 150); /* רקע לבן */
-  padding: 30px; /* ריווח פנימי */
-  border-radius: 10px; /* מעגל פינות */
-  box-shadow: 0px 4px 10px rgba(110, 81, 81,1.1); /* צל עדין */
-}
-p:first-of-type {
-  font-weight: bold; /* הופך את הפסקה הראשונה למודגשת */
-  font-size: 20px; /* מגדיל את הגופן של הפסקה הראשונה */
-  color: var(--secondary-color); /* צובע אותה בצבע מיוחד */
-}
-
-
-
-
-
-</style>
-<body>
- <h1>inon</h1>
- <h2>inon</h2>
- <h3>inon</h3>
-    <div class="article-container">
-        <h1>כותרת המאמר</h1>
-        <h1>inon</h1>
-        <p>inon_nashnz</p>
-        <p><strong>inon</strong> vosjvopnrs</p>
-        <h2>כותרת משנה</h2>
-        <p>זהו משפט הפתיחה של המאמר, ולכן הוא צריך להיות מודגש.</p>
-        <p>המאמר כולל <strong>מילים מודגשות</strong>, <span class="underline">קו תחתון</span> וגם <span class="italic">טקסט נטוי</span>.</p>
-        <blockquote >"זהו ציטוט מתוך המאמר שמשמש להדגשה מיוחדת."</blockquote>
-      </div>
-      
-    
-</body>
 </html>

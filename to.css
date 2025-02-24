@@ -1,0 +1,200 @@
+:root {
+  --highlight-color: #4a4f50; /* צבע להדגשות */
+  --highlight-weight: bold; /* טקסט מודגש */
+  --highlight-size: 22px; /* גודל טקסט מודגש */
+}
+strong {
+  color: var(--highlight-color);
+  font-weight: var(--highlight-weight);
+  font-size: var(--highlight-size);
+}
+/* כללי */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: antiquewhite;
+  text-align: right;
+  height: 100%; /* גורם לכל העמוד למלא את כל גובה המסך */
+  display: flex;
+  flex-direction: column;
+  
+}
+/* קונטיינר ראשי */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* כותרת */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #b972af, #071f38);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-login {
+  background-color: #ffffff;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.btn-login:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+.btn-register {
+  background-color: #ca6f5a;
+  color: white;
+  border: 1px solid #8e6a62;
+}
+
+.btn-register:hover {
+  background-color: #000000;
+  color: rgb(0, 255, 98);
+  transform: scale(1.05);
+}
+#title {
+  background: linear-gradient(90deg, #5d407a, #406f98); /* שילוב תכלת-סגול יוקרתי */
+  color: #ffffff; /* טקסט לבן כדי ליצור ניגוד ברור */
+  padding: 20px 60px;
+  margin: 120px auto 20px;
+  text-align: center;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: fit-content;
+  border: 3px solid #a89cc8; /* מסגרת עדינה בגוון כסוף-סגול */
+  box-shadow: 5px 5px 15px rgba(88, 133, 255, 0.4); /* צל כחול רך */
+}
+
+h3{
+  color: #372a2a;
+}
+
+a{
+  text-decoration: none;
+}
+.gemini-links {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px; /* מרווח בין ה-Gemini לכפתורים */
+}
+.inon {
+  padding: 10px 20px;
+
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.inon:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+.con {
+  display: flex;
+  justify-content: space-between; /* רווחים שווים */
+  width: 60%;
+  margin: auto;
+  position: relative; /* אלמנט רגיל שידחק לסוף הדף */
+  top: 50px; /* מעלה אותו קצת מעל התחתית */
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 100px;
+  background-color: aquamarine;
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.box:hover {
+  background-color: rgb(106, 121, 189);
+  border: 1px solid #78c4e4;
+}
+
+/* הריבוע האמצעי נמוך יותר */
+.middle {
+  margin-top: 70px; /* אפשר לשנות לפי הצורך */
+}
+.main-content {
+  flex: 10; /* מרחיב את התוכן כך שהאלמנט התחתון יידחק לסוף */
+}
+.cont{
+  position: relative;
+  width: 100%;
+  height: 60vh; /* ממלא את כל גובה הדף */
+  display: flex;
+  justify-content: center; /* ממרכז לרוחב */
+  align-items: center; /* ממרכז לגובה */
+
+}
+
+.image {
+  position: absolute;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 50%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.4)); /* מסגרת מטושטשת */
+}
+
+
+.text {
+  position: absolute;
+  top: 20%; /* העליתי את הטקסט */
+  left: 50%; /* מוודא שהטקסט נמצא מימין לתמונה */
+  width: 40%;
+  text-align: right;
+}

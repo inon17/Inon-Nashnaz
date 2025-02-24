@@ -9,24 +9,99 @@ strong {
   color: var(--highlight-color); /* צבע טקסט מודגש */
   font-weight: var(--highlight-weight); /* טקסט עבה יותר */
   font-size: var(--highlight-size); /* גודל כתב */
-
-   }
-
+}
+   
 p {
   font-size: 18px;
   color: #333;
   line-height: 1.6;
-
 }
-.class{
-  background-color: rgb(209, 171, 215);
-}
-h1{
+  h1{
   color: darkviolet;
   text-align: center;
-  line-height: 30px; /* ממרכז את הטקסט אנכית */
-  
+  line-height: 30px; /* ממרכז את הטקסט אנכית */}
+
+
+  .class {
+    background-color: rgb(209, 171, 215);
+    width: 100vw; /* תופס את כל רוחב המסך */
+    min-height: 100vh; /* לפחות בגובה מלא */
+    margin: 0; /* מבטל מרווחים חיצוניים */
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* מוודא שהתוכן מסודר בעמודה */
+    align-items: center; /* ממרכז את כל האלמנטים */
 }
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* ממקם במרכז */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #b972af, #071f38);
+  color: white;
+  padding: 15px 30px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+  /* לוגו */
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    
+    
+}
+
+/* אזור הכפתורים */
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* מרכז את הכפתורים */
+
+
+}
+
+/* עיצוב הכפתורים */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+/* כפתור כניסה */
+.btn-login {
+    background-color: #ffffff;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+.btn-login:hover { 
+    background-color: #ffffff;
+    color: white;
+}
+
+/* כפתור הרשמה */
+.btn-register {
+    background-color: #e63c16;
+    color: white;
+    border: 1px solid #8e6a62;
+}
+
+.btn-register:hover {
+    background-color: #000000;
+}
+  
+
 #lept { /*כותרת */
   background-color: aquamarine;
   color: black;
@@ -89,7 +164,7 @@ p{
   align-items: center;
   gap: 30px; /* רווח בין הריבועים */
   flex-wrap: wrap; 
-  margin-top: 40px; /*רווח מךמעלה*/
+  margin-top: 80px; /*רווח מךמעלה*/
   height: 110px; 
 }
 #small-box {
