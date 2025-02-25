@@ -1,16 +1,69 @@
-:root {
-
-  --highlight-color: #000000; /* צבע להדגשות (כמו strong) */
-  --highlight-weight: bold; /* משקל גופן (bold) */
-  --highlight-size: 22px; /* גודל טקסט מודגש */
+.intro-container {
+  background-color: antiquewhite;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 80%;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
 }
 
-strong {
-  color: var(--highlight-color); /* צבע טקסט מודגש */
-  font-weight: var(--highlight-weight); /* טקסט עבה יותר */
-  font-size: var(--highlight-size); /* גודל כתב */
+.intro-container h2 {
+  color: #333;
+  font-size: 28px;
 }
-   
+
+.intro-container h3 {
+  color: #555;
+  font-size: 24px;
+}
+
+.intro-container p {
+  font-size: 18px;
+  color: #444;
+}
+
+.intro-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.intro-container li {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 p {
   font-size: 18px;
   color: #333;
