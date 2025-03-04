@@ -2,8 +2,8 @@
   --text-color: rgb(0, 0, 0);
   --h1-size: 32px;
   --h2-size: 24px;
-  --p-size: 16px;
-  --padding: 10px;
+  --p-size: 19px;
+  --padding: 15px;
   --margin-top: 50px; /* רווח מלמעלה */
   --title-padding-right: 20px; /* רווח מהקצה הימני */
 }
@@ -14,7 +14,7 @@
   padding: var(--padding);
   text-align: center;
   width: 80%;
-  margin: var(--margin-top) auto 20px; /* הוספת רווח מלמעלה */
+  margin: var(--margin-top) auto 0px; /* הוספת רווח מלמעלה */
 }
 
 /* עיצוב כותרות ופסקאות - מיושרים לימין עם רווח */
@@ -28,17 +28,40 @@
 .content-box h1 {
   font-size: var(--h1-size);
   margin-bottom: 80px;
+  color: #784778;
+  font-family: "Times New Roman", serif;
+  box-shadow: 5px 5px 15px rgba(88, 133, 255, 0.4); /* צל כחול רך */
+  display: inline-block; /* הופך את האלמנט לקופסה המתאימה לגודל התוכן */
+  padding: 20px 30px; /* מוסיף קצת רווח מסביב לטקסט */
 }
+
 
 .content-box h2 {
   font-size: var(--h2-size);
   margin-bottom: 0px;
-}
 
+}
 .content-box p {
   font-size: var(--p-size);
-  line-height: 1.5;
+  line-height: 1.6;
 }
+
+/* הזזת הפסקה שמאלה */
+.content-box h2 {
+  margin-right: auto; /* מונע יישור לימין ומזיז את הפסקה שמאלה */
+  padding-right: 0; /* מבטל את הרווח מהקצה הימני */
+}
+.list {
+  direction: rtl;
+  text-align: right;
+  list-style-type: disc; /* נקודות שחורות */
+  padding-right: 0; /* מסיר רווח פנימי מימין */
+  margin-right: 50px; /* מזיז את הרשימה שמאלה */
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+
+
 /* ----------------------------- */
 strong {
   color: var(--highlight-color);
@@ -54,10 +77,12 @@ strong {
 body {
   font-family: Arial, sans-serif;
   background-color: antiquewhite;
-  text-align: right;
+  text-align: left;
   height: 100%; /* גורם לכל העמוד למלא את כל גובה המסך */
   display: flex;
   flex-direction: column;
+
+
   
 }
 /* קונטיינר ראשי */
@@ -132,6 +157,7 @@ h1{
   color: rgb(0, 255, 98);
   transform: scale(1.05);
 }
+
 #title {
   background: linear-gradient(90deg, #5d407a, #406f98); /* שילוב תכלת-סגול יוקרתי */
   color: #ffffff; /* טקסט לבן כדי ליצור ניגוד ברור */
@@ -148,14 +174,24 @@ h1{
   border: 3px solid #a89cc8; /* מסגרת עדינה בגוון כסוף-סגול */
   box-shadow: 5px 5px 15px rgba(88, 133, 255, 0.4); /* צל כחול רך */
 }
+.left-image {
+  float: left;
+  margin-left: 150px; /* מרווח מצד שמאל */
+  margin-right: 20px; /* מרווח מצד ימין כדי למנוע שהטקסט ייגע בתמונה */
+  margin-top: -35px; 
+  width: 10%;
+}
 
 h3{
   color: #151111;
   font-size: 18px;
 }
-
+.padding{
+  padding-bottom: 200px; /* מוסיף רווח גדול בתחתית העמוד */
+}
 a{
   text-decoration: none;
+  color: rgb(108, 108, 1);
 }
 .gemini-links {
   display: flex;
@@ -236,6 +272,7 @@ a{
   direction: rtl;
   font-size: 14px;
   margin-top: 50px; /* מוריד את התמונה למטה */
+  line-height: 1.6;
 }
 .intro-container {
 
@@ -282,7 +319,6 @@ a{
     border-radius: 10px;
     transition: all 0.3s;
 }
-
 .op {
   width: 100%;
   position: fixed;
@@ -290,12 +326,19 @@ a{
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  justify-content: center; /* ממרכז את התוכן אופקית */
-  align-items: center; /* ממרכז את התוכן אנכית */
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background: linear-gradient(135deg, #423340, #071f38);
   color: white;
   padding: 15px 30px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
   z-index: 1000;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
+
+.op.hidden {
+  transform: translate(-50%, -100%);
+  opacity: 0;
+}
+                   

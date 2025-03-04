@@ -49,3 +49,32 @@ document.addEventListener("DOMContentLoaded", function () {
 <label for="lname">Password:</label><br>
 <input type="text" id="password" name="lname"><br><br>
 <button type="submit" id="submit-but">Login</button> */}
+let lastScrollTop = 0;
+const header = document.querySelector(".op");
+const scrollThreshold = 50; // הכותרת תיעלם רק אחרי 50 פיקסלים
+const debounceTime = 150; // מניעת ריצוד באנימציה
+let isScrolling;
+
+window.addEventListener("scroll", () => {
+  let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  // ביטול גלילה אם המשתמש מפסיק לגלול לכמה מילי-שניות
+  window.clearTimeout(isScrolling);
+  isScrolling = setTimeout(() => {
+    if (scrollTop < lastScrollTop) {
+      header.classList.remove("hidden");
+    }
+  }, debounceTime);
+
+  if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+    header.classList.add("hidden");
+  } else if (scrollTop < lastScrollTop) {
+    header.classList.remove("hidden");
+  }
+
+  lastScrollTop = scrollTop;
+});
+
+
+
+
