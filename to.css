@@ -341,4 +341,49 @@ a{
   transform: translate(-50%, -100%);
   opacity: 0;
 }
-                   
+.calculator {
+  padding: 20px; /* Padding קטן יותר */
+  border-radius: 15px;
+  text-align: center;
+  width: 600px; /* רוחב קטן יותר */
+  height: 300px; /* גובה קטן יותר */
+  margin: 50px auto; /* יוצר מרווח בצדדים ומרכז את האלמנט */
+  color: #000000c9; /* טקסט שחור */
+  direction: rtl;
+  font-family: 'Arial', sans-serif;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px; /* גודל פונטים קטן יותר */
+  margin-bottom: 8px;
+  display: block;
+}
+
+input {
+  width: 80%;
+  padding: 8px; /* Padding קטן יותר */
+  margin: 5px 0 10px 0; /* מרווחים קטנים יותר */
+  border: none;
+  border-radius: 8px; /* רדיוס קטן יותר */
+  text-align: center;
+  font-size: 16px; /* גודל פונטים קטן יותר */
+  background-color: rgb(255, 255, 255);
+  color: #333;
+}
+
+button {
+  width: 85%;
+  padding: 10px; /* Padding קטן יותר */
+  background: #f0aa68; /* צבע אדום מותאם */
+  color: rgb(51, 46, 46);
+  border: none;
+  border-radius: 8px; /* רדיוס קטן יותר */
+  cursor: pointer;
+  margin-top: 15px; /* מרווח קטן יותר */
+  font-size: 16px; /* גודל פונטים קטן יותר */
+}
+
+button:hover {
+  background: #fd5d00; /* צבע אדום כהה יותר בהעברה */
+}

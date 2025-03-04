@@ -74,7 +74,40 @@ window.addEventListener("scroll", () => {
 
   lastScrollTop = scrollTop;
 });
+// ***************************************************************
+function resetFields() {
+  let initialInput = document.getElementById("initial");
+  let yearsInput = document.getElementById("years");
+  let monthlyInput = document.getElementById("monthly");
+  
+  setTimeout(() => {
+    initialInput.value = "";
+    yearsInput.value = "";
+    monthlyInput.value = "";
+  }, 40000); // אחרי 10 שניות
+}
 
+function calculateInvestment() {
+  let initialInput = document.getElementById("initial");
+  let yearsInput = document.getElementById("years");
+  let monthlyInput = document.getElementById("monthly");
+  let resultElement = document.getElementById("result");
+  
+  let initial = parseFloat(initialInput.value) || 0;
+  let years = parseInt(yearsInput.value) || 0;
+  let monthly = parseFloat(monthlyInput.value) || 0;
+  let rate = 0.10; // תשואה שנתית ממוצעת של 10%
+  let months = years * 12;
+  let total = initial;
+  
+  for (let i = 0; i < months; i++) {
+      total += monthly;
+      total *= (1 + rate / 12);
+  }
+  
+  resultElement.innerText = total.toFixed(2);
 
-
+  // נקרא לפונקציה resetFields שמוחקת את השדות אחרי 10 שניות
+  resetFields();
+}
 
