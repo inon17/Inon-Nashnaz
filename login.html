@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>התחברות</title>
+  <link rel="stylesheet" href="to.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="calculator">
+  <h1>התחבר לחשבונך</h1>
+  <form onsubmit="login(event)">
+    <label for="login-username">שם משתמש:</label>
+    <input type="text" id="login-username" required>
+
+    <label for="login-password">סיסמה:</label>
+    <input type="password" id="login-password" required>
+
+    <button type="submit">התחבר</button>
+  </form>
+  <p>אין לך חשבון? <a href="register.html">הרשם כאן</a></p>
+  </div>
+</body>
+</html>
