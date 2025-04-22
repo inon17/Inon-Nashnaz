@@ -7,6 +7,11 @@
   --margin-top: 50px; /* רווח מלמעלה */
   --title-padding-right: 20px; /* רווח מהקצה הימני */
 }
+#error-message {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
 
 /* עיצוב כללי ל-div */
 .content-box {
@@ -60,7 +65,16 @@
   font-size: 20px;
   font-family: Arial, sans-serif;
 }
-
+#title-about {
+  font-size: 32px;
+  color: #2c3e50;
+  font-weight: 700;
+  text-align: right;
+  border-right: 5px solid #3498db;
+  padding-right: 15px;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /* ----------------------------- */
 strong {
@@ -76,13 +90,14 @@ strong {
 }
 body {
   font-family: Arial, sans-serif;
+  padding: 60px 0; /* ריווח עליון ותחתון */
   background-color: antiquewhite;
   text-align: left;
   height: 100%; /* גורם לכל העמוד למלא את כל גובה המסך */
   display: flex;
   flex-direction: column;
-
-
+  align-items: center;
+ 
   
 }
 /* קונטיינר ראשי */
@@ -175,21 +190,23 @@ h1{
 }
 
 #title {
-  background: linear-gradient(90deg, #5d407a, #406f98); /* שילוב תכלת-סגול יוקרתי */
-  color: #ffffff; /* טקסט לבן כדי ליצור ניגוד ברור */
+  background: linear-gradient(135deg, #7a5d92, #4887c6); /* גוון עמוק יותר ליוקרה */
+  color: #fff;
   padding: 20px 60px;
-  margin: 120px auto 20px;
+  margin: 120px auto 30px;
   text-align: center;
-  border-radius: 12px;
+  border-radius: 25px;
   font-family: 'Poppins', sans-serif;
-  font-size: 48px;
+  font-size: 42px;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 3px;
   width: fit-content;
-  border: 3px solid #a89cc8; /* מסגרת עדינה בגוון כסוף-סגול */
-  box-shadow: 5px 5px 15px rgba(88, 133, 255, 0.4); /* צל כחול רך */
+  border: 3px solid #bcaee4; /* מסגרת בגוון פנינה סגול */
+  box-shadow: 6px 6px 15px rgba(64, 103, 152, 0.4); /* צל מעודן להבלטה */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .left-image {
   float: left;
   margin-left: 150px; /* מרווח מצד שמאל */
@@ -214,6 +231,16 @@ a{
   gap: 15px;
   margin-bottom: 10px; /* מרווח בין ה-Gemini לכפתורים */
 }
+.border-about{
+  background-color: white;
+  padding: 60px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 50%;
+  max-width: 90%;
+  text-align: center;
+  margin: auto 0; /* מרכוז אנכי עם ריווח */
+}
 .inon {
   padding: 10px 20px;
   color: white;
@@ -229,10 +256,9 @@ a{
 .con {
   display: flex;
   justify-content: space-between; /* רווחים שווים */
-  width: 60%;
+  width: 65%;
   margin: auto;
   position: relative; /* אלמנט רגיל שידחק לסוף הדף */
-  top: 10px; /* מעלה אותו קצת מעל התחתית */
 }
 .box {
   display: flex;
@@ -248,7 +274,7 @@ a{
   color: white;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
+  cursor: pointer;         /* הופך את סמן העכבר לחיץ */
 }
 .box:hover {
   background: linear-gradient(45deg, #d98e04, #dc7124); /* מעבר צבע חם */
@@ -263,14 +289,31 @@ a{
 /* הריבוע האמצעי נמוך יותר */
 .middle {
 margin-top: 70px; /* אפשר לשנות לפי הצורך */
+margin-bottom: 80px; /* הרווח מתחת */
 } 
 .cont {
-  display: block;
-  width: 100%;
-  padding: 5% 5%;
-  text-align: center;
-  }
+  width: 80vw;
+  max-width: 800px;
+  aspect-ratio: 20/7;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
 
+/* הסרטון עצמו */
+#bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+.containe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0vh; /* גובה מלא של המסך */
+}
 .image {
   width: 60%; /* תופס 60% מהשדה, אבל לא יותר מ-600px */
   max-width: 900px; /* גודל מקסימלי */
@@ -289,7 +332,7 @@ margin-top: 70px; /* אפשר לשנות לפי הצורך */
   border-radius: 20px;
   text-align: center;
   width: 80%;
-  margin:5px auto;
+  margin: 5px auto;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -360,6 +403,15 @@ margin-top: 70px; /* אפשר לשנות לפי הצורך */
   color: #000000c9; /* טקסט שחור */
   direction: rtl;
   font-family: 'Arial', sans-serif;
+}
+.calculator h1 {
+  color: #2c3e50; /* כחול כהה אלגנטי */
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 2px solid #ebc297; /* קו תחתון כחול */
+  padding-bottom: 10px;
 }
 
 label {

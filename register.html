@@ -8,21 +8,31 @@
   <script src="main.js" defer></script>
 </head>
 <body>
+ <div> 
   <div class="calculator">
-  <h1>צור חשבון חדש</h1>
-  <form onsubmit="register(event)">
-    <label for="register-username">שם משתמש:</label>
-    <input type="text" id="register-username" required>
+    <h1>טופס הרשמה</h1><br>
+    <form onsubmit="register(event)">
+      <label for="register-username">שם משתמש:</label>
+      <input type="text" id="register-username" required>
+    
+      <label for="register-email">אימייל:</label>
+      <input type="email" id="register-email" required>
+    
+      <label for="register-age">גיל:</label>
+      <input type="number" id="register-age" min="18" max="120" required>
+    
+      <label for="register-password">סיסמה:</label>
+      <input type="password" id="register-password" required>
+    
+      <label for="confirm-password">אישור סיסמה:</label>
+      <input type="password" id="confirm-password" required>
+    
 
-    <label for="register-password">סיסמה:</label>
-    <input type="password" id="register-password" required>
-
-    <label for="confirm-password">אישור סיסמה:</label>
-    <input type="password" id="confirm-password" required>
-
-    <button type="submit">הרשם</button>
-  </form>
-  <p>כבר יש לך חשבון? <a href="login.html">התחבר כאן</a></p>
-</div>
+      <button type="submit">הרשם</button>
+    </form>
+    
+    <p id="error-message"></p>
+    <p>כבר יש לך חשבון? <a href="login.html">התחבר כאן</a></p>
+  </div>
 </body>
 </html>
