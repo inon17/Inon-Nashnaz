@@ -106,48 +106,124 @@ function calculateInvestment() {
   // נקרא לפונקציה resetFields שמוחקת את השדות אחרי 10 שניות
   resetFields();
 }
+
+
+
+// ================================
+// חישוב השקעה
+function calculateInvestment() {
+  let initial = parseFloat(document.getElementById("initial").value) || 0;
+  let years = parseInt(document.getElementById("years").value) || 0;
+  let monthly = parseFloat(document.getElementById("monthly").value) || 0;
+  let rate = 0.10;
+  let months = years * 12;
+  let total = initial;
+
+  for (let i = 0; i < months; i++) {
+    total += monthly;
+    total *= (1 + rate / 12);
+  }
+
+  document.getElementById("result").innerText = total.toFixed(2);
+}
+
+// הרשמה
 function register(event) {
   event.preventDefault();
-  const username = document.getElementById('register-username').value;
-  const password = document.getElementById('register-password').value;
 
-  // אם שם המשתמש קיים כבר ב-localStorage
-  // if (localStorage.getItem(username)) {
-  //   alert('שם משתמש זה כבר קיים.');
-  // } else {
-  //   // שומר את שם המשתמש והסיסמה ב-localStorage
-  //   localStorage.setItem(username, password);
-  //   alert('נרשמת בהצלחה! כעת תוכל להתחבר.');
-  //   window.location.href = 'login.html'; // הפנייה לדף ההתחברות
-  // }
+  const username = document.getElementById("register-username").value.trim();
+  const email = document.getElementById("register-email").value.trim();
+  const age = parseInt(document.getElementById("register-age").value);
+  const password = document.getElementById("register-password").value;
+  const errorMessage = document.getElementById("error-message");
+
+  errorMessage.textContent = "";
+  errorMessage.style.color = "red";
+
+  if (!username || !email || !password || isNaN(age)) {
+    errorMessage.textContent = "אנא מלא את כל השדות";
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    errorMessage.textContent = "האימייל אינו תקין";
+    return;
+  }
+
+  if (age < 16 || age > 120) {
+    errorMessage.textContent = "הגיל חייב להיות בין 16 ל־120";
+    return;
+  }
+
+  if (password.length < 6) {
+    errorMessage.textContent = "הסיסמה חייבת להכיל לפחות 6 תווים";
+    return;
+  }
+
+  if (localStorage.getItem(username)) {
+    errorMessage.textContent = "שם משתמש זה כבר קיים";
+    return;
+  }
+
+  const userData = { email, age, password };
+  localStorage.setItem(username, JSON.stringify(userData));
+
+  errorMessage.style.color = "green";
+  errorMessage.textContent = "ההרשמה הצליחה! מועבר לטופס התחברות...";
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 1100);
 }
+
+// התחברות
 function login(event) {
   event.preventDefault();
-  const username = document.getElementById('login-username').value;
-  const password = document.getElementById('login-password').value;
 
-  const storedPassword = localStorage.getItem(username);
-  
-  if (storedPassword === password) {
-    sessionStorage.setItem('loggedInUser', username); // שומר את שם המשתמש ב-sessionStorage
-    alert('התחברת בהצלחה!');
-    window.location.href = 'index.html'; // הפנייה לדף הבית אחרי ההתחברות
+  const username = document.getElementById("login-username").value.trim();
+  const password = document.getElementById("login-password").value;
+  const storedData = localStorage.getItem(username);
+
+  if (!storedData) {
+    alert("שם המשתמש לא קיים");
+    return;
+  }
+
+  const user = JSON.parse(storedData);
+
+  if (user.password === password) {
+    sessionStorage.setItem("loggedInUser", username);
+    alert("התחברת בהצלחה!");
+    window.location.href = "index.html";
   } else {
-    alert('שם משתמש או סיסמה לא נכונים.');
+    alert("סיסמה שגויה");
   }
 }
+
+// התנתקות
 function logout() {
-  sessionStorage.removeItem('loggedInUser'); // מסיר את שם המשתמש מ-sessionStorage
-  alert('התנתקת בהצלחה!');
-  window.location.href = 'index.html'; // הפנייה לדף הבית אחרי ההתנתקות
+  sessionStorage.removeItem("loggedInUser");
+  alert("התנתקת בהצלחה!");
+  window.location.href = "index.html";
 }
-function checkLogin(page) {
-  const loggedInUser = sessionStorage.getItem('loggedInUser');
+
+// הצגת שם משתמש
+function displayUsername() {
+  const loggedInUser = sessionStorage.getItem("loggedInUser");
+  const display = document.getElementById("user-display");
+  if (display && loggedInUser) {
+    display.innerText = `שלום, ${loggedInUser}`;
+  }
+}
+
+// בדיקה האם המשתמש מחובר לפני צפייה בקורסים
+function checkLogin(destination) {
+  const loggedInUser = sessionStorage.getItem("loggedInUser");
   if (!loggedInUser) {
-    alert('עליך להירשם או להתחבר כדי לגשת לדף זה.');
-    window.location.href = 'login.html'; // הפנייה לדף התחברות אם לא מחובר
+    alert("עליך להתחבר כדי לצפות בקורסים");
+    window.location.href = "login.html";
   } else {
-    window.location.href = page; // הפנייה לדף המבוקש אם המשתמש מחובר
+    window.location.href = destination;
   }
 }
 function displayUsername() {
@@ -165,62 +241,7 @@ function displayUsername() {
     document.getElementById('logout-btn').style.display = 'none'; 
   }
 }
-window.onload = displayUsername; // מפעיל את הפונקציה ברגע שהדף נטען
+
+window.onload = displayUsername;
 
 
-
-
-function register(event) {
-  event.preventDefault(); // למנוע שליחה רגילה של הטופס
-
-  const username = document.getElementById("register-username").value.trim();
-  const email = document.getElementById("register-email").value.trim();
-  const age = parseInt(document.getElementById("register-age").value);
-  const password = document.getElementById("register-password").value;
-  const confirmPassword = document.getElementById("confirm-password").value;
-  const errorMessage = document.getElementById("error-message");
-
-  // איפוס הודעת שגיאה
-  errorMessage.textContent = "";
-  errorMessage.style.color = "red";
-
-  // בדיקות
-  if (!username || !email || !password || !confirmPassword || isNaN(age)) {
-    errorMessage.textContent = "אנא מלא את כל השדות";
-    return;
-  }
-
-  // אימייל תקין
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    errorMessage.textContent = "האימייל אינו תקין";
-    return;
-  }
-
-  // גיל בטווח
-  if (age < 16 || age > 120) {
-    errorMessage.textContent = "הגיל חייב להיות בין 18 ל־120";
-    return;
-  }
-
-  // סיסמה באורך מספיק
-  if (password.length < 6) {
-    errorMessage.textContent = "הסיסמה חייבת להכיל לפחות 6 תווים";
-    return;
-  }
-
-  // סיסמה תואמת
-  if (password !== confirmPassword) {
-    errorMessage.textContent = "הסיסמאות אינן תואמות";
-    return;
-  }
-
-  // אם הכל תקין – הצג הצלחה והעבר לדף התחברות
-  errorMessage.style.color = "green";
-  errorMessage.textContent = "ההרשמה הצליחה! מועבר לטופס התחברות...";
-
-  // מעבר אוטומטי אחרי 1.1 שניות
-  setTimeout(() => {
-    window.location.href = "login.html";
-  }, 1100);
-}
