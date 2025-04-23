@@ -1,9 +1,5 @@
 
 
-// check pass 8 char A a 1 
-// check user name 2 chars 
-// use local storage tp save data 
-// if user coneccted show lock data if not go to login 
 document.addEventListener("DOMContentLoaded", function () {
   let loginModal = document.getElementById("login-modal");
   let openLoginButton = document.getElementById("open-login-modal");
@@ -110,50 +106,50 @@ function calculateInvestment() {
   // נקרא לפונקציה resetFields שמוחקת את השדות אחרי 10 שניות
   resetFields();
 }
-// function register(event) {
-//   event.preventDefault();
-//   const username = document.getElementById('register-username').value;
-//   const password = document.getElementById('register-password').value;
+function register(event) {
+  event.preventDefault();
+  const username = document.getElementById('register-username').value;
+  const password = document.getElementById('register-password').value;
 
-//   // אם שם המשתמש קיים כבר ב-localStorage
-//   if (localStorage.getItem(username)) {
-//     alert('שם משתמש זה כבר קיים.');
-//   } else {
-//     // שומר את שם המשתמש והסיסמה ב-localStorage
-//     localStorage.setItem(username, password);
-//     alert('נרשמת בהצלחה! כעת תוכל להתחבר.');
-//     window.location.href = 'login.html'; // הפנייה לדף ההתחברות
-//   }
-// }
-// function login(event) {
-//   event.preventDefault();
-//   const username = document.getElementById('login-username').value;
-//   const password = document.getElementById('login-password').value;
+  // אם שם המשתמש קיים כבר ב-localStorage
+  // if (localStorage.getItem(username)) {
+  //   alert('שם משתמש זה כבר קיים.');
+  // } else {
+  //   // שומר את שם המשתמש והסיסמה ב-localStorage
+  //   localStorage.setItem(username, password);
+  //   alert('נרשמת בהצלחה! כעת תוכל להתחבר.');
+  //   window.location.href = 'login.html'; // הפנייה לדף ההתחברות
+  // }
+}
+function login(event) {
+  event.preventDefault();
+  const username = document.getElementById('login-username').value;
+  const password = document.getElementById('login-password').value;
 
-//   const storedPassword = localStorage.getItem(username);
+  const storedPassword = localStorage.getItem(username);
   
-//   if (storedPassword === password) {
-//     sessionStorage.setItem('loggedInUser', username); // שומר את שם המשתמש ב-sessionStorage
-//     alert('התחברת בהצלחה!');
-//     window.location.href = 'index.html'; // הפנייה לדף הבית אחרי ההתחברות
-//   } else {
-//     alert('שם משתמש או סיסמה לא נכונים.');
-//   }
-// }
-// function logout() {
-//   sessionStorage.removeItem('loggedInUser'); // מסיר את שם המשתמש מ-sessionStorage
-//   alert('התנתקת בהצלחה!');
-//   window.location.href = 'index.html'; // הפנייה לדף הבית אחרי ההתנתקות
-// }
-// function checkLogin(page) {
-//   const loggedInUser = sessionStorage.getItem('loggedInUser');
-//   if (!loggedInUser) {
-//     alert('עליך להירשם או להתחבר כדי לגשת לדף זה.');
-//     window.location.href = 'login.html'; // הפנייה לדף התחברות אם לא מחובר
-//   } else {
-//     window.location.href = page; // הפנייה לדף המבוקש אם המשתמש מחובר
-//   }
-// }
+  if (storedPassword === password) {
+    sessionStorage.setItem('loggedInUser', username); // שומר את שם המשתמש ב-sessionStorage
+    alert('התחברת בהצלחה!');
+    window.location.href = 'index.html'; // הפנייה לדף הבית אחרי ההתחברות
+  } else {
+    alert('שם משתמש או סיסמה לא נכונים.');
+  }
+}
+function logout() {
+  sessionStorage.removeItem('loggedInUser'); // מסיר את שם המשתמש מ-sessionStorage
+  alert('התנתקת בהצלחה!');
+  window.location.href = 'index.html'; // הפנייה לדף הבית אחרי ההתנתקות
+}
+function checkLogin(page) {
+  const loggedInUser = sessionStorage.getItem('loggedInUser');
+  if (!loggedInUser) {
+    alert('עליך להירשם או להתחבר כדי לגשת לדף זה.');
+    window.location.href = 'login.html'; // הפנייה לדף התחברות אם לא מחובר
+  } else {
+    window.location.href = page; // הפנייה לדף המבוקש אם המשתמש מחובר
+  }
+}
 function displayUsername() {
   const loggedInUser = sessionStorage.getItem('loggedInUser');
   if (loggedInUser) {
