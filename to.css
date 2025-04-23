@@ -324,8 +324,6 @@ margin-bottom: 80px; /* הרווח מתחת */
   margin: 0 auto 20px; /* ממקם את התמונה במרכז */
 }
 
-
-
 .intro-container {
 
   padding: 90px;
@@ -447,4 +445,41 @@ button {
 
 button:hover {
   background: #fd5d00; /* צבע אדום כהה יותר בהעברה */
+}
+
+.flip-container {
+  perspective: 1000px;           /* יוצר אפקט תלת־ממד – חשוב בשביל האנימציה של הסיבוב */
+  width: 300px;                  /* רוחב התיבה שמכילה את הכרטיס */
+  height: 200px;                /* גובה התיבה – משפיע ישירות על גודל התמונה */
+  cursor: pointer;              /* הופך את הסמן ליד כשעוברים עם העכבר – מרמז שאפשר ללחוץ */
+}
+
+.flipper {
+  position: relative;           /* מאפשר למקם את .front ו-.back יחסית אליו */
+  width: 100%;                  /* תופס את כל רוחב ה-.flip-container */
+  height: 100%;                 /* תופס את כל גובה ה-.flip-container */
+  transition: 0.6s;             /* משך זמן האנימציה של הסיבוב */
+  transform-style: preserve-3d; /* שומר על מראה תלת-ממדי בזמן הסיבוב */
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);   /* הסיבוב עצמו – כשיש מחלקת flipped הקלף מסתובב 180 מעלות */
+}
+
+.front, .back {
+  position: absolute;           /* שתי הפאות מונחות אחת על השנייה באותו מקום */
+  width: 100%;                  /* תופסות את כל הרוחב של ה-flipper */
+  height: 100%;                 /* תופסות את כל הגובה של ה-flipper */
+  backface-visibility: hidden;  /* מסתיר את הצד האחורי כשלא רלוונטי */
+}
+
+.front img, .back img {
+  width: 100%;                  /* התמונה ממלאת את כל הרוחב של הפאה */
+  height: 100%;                 /* התמונה ממלאת את כל הגובה של הפאה */
+  object-fit: contain;          /* שומר על יחס גובה-רוחב של התמונה, בלי לחתוך אותה */
+  /* לדוגמה: אם התמונה מרובעת והקופסה מלבנית, יהיו שוליים בצדדים או למעלה/למטה */
+}
+
+.back {
+  transform: rotateY(180deg);   /* הפאה האחורית מסובבת – כדי שתהיה בכיוון הנכון כשהקלף מסתובב */
 }
