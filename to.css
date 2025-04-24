@@ -130,7 +130,7 @@ h1{
   z-index: 1000;
 }
 .logo {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
 }
 .buttons {
@@ -228,9 +228,13 @@ a{
 }
 .gemini-links {
   display: flex;
+  justify-content: center; /* מרכז את הקישורים אופקית */
+  align-items: center;
   gap: 15px;
-  margin-bottom: 10px; /* מרווח בין ה-Gemini לכפתורים */
+  margin-bottom: 10px;
+  direction: rtl; /* אם אתה משתמש בעברית – זה חשוב */
 }
+
 .border-about{
   background-color: white;
   padding: 60px;
