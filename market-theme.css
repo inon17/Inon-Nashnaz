@@ -226,7 +226,7 @@ a{
   text-decoration: none;
   color: rgb(108, 108, 1);
 }
-.gemini-links {
+.link-above{
   display: flex;
   justify-content: center; /* מרכז את הקישורים אופקית */
   align-items: center;
@@ -245,7 +245,7 @@ a{
   text-align: center;
   margin: auto 0; /* מרכוז אנכי עם ריווח */
 }
-.inon {
+.icon {
   padding: 10px 20px;
   color: white;
   border-radius: 50px;
@@ -253,7 +253,7 @@ a{
   font-size: 16px;
   transition: 0.3s;
 }
-.inon:hover {
+.icon:hover {
   background-color: #45a049;
   transform: scale(1.05);
 }
@@ -373,7 +373,7 @@ margin-bottom: 80px; /* הרווח מתחת */
   border-radius: 10px;
   transition: all 0.3s;
 }
-.op {
+.Header-Background {
   width: 100%;
   position: fixed;
   top: 0;
@@ -486,4 +486,25 @@ button:hover {
 
 .back {
   transform: rotateY(180deg);   /* הפאה האחורית מסובבת – כדי שתהיה בכיוון הנכון כשהקלף מסתובב */
+}
+table {
+  width: 80%; /* תופס 80% מהשורה */
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse; /* מבטל רווחים בין התאים */
+}
+th, td {
+  padding: 10px;
+  text-align: center; /* מרכז את התוכן של כל תא */
+  border: 1px solid #ddd; /* גבול דק לכל התא */
+}
+th {
+  background-color: #daeaa0; /* צבע רקע לכותרת */
+  color: white; /* צבע טקסט של הכותרת */
+  font-weight: bold; /* כותרת מודגשת */
+}
+
+td {
+  font-size: 14px; /* גודל טקסט בתאים */
+  color: #333; /* צבע טקסט בתאים */
 }
