@@ -1,25 +1,21 @@
+/* --------------------------------עיצוב לקורסים-------------- */
 :root {
-  --text-color: rgb(0, 0, 0);
-  --h1-size: 32px;
-  --h2-size: 24px;
-  --p-size: 19px;
-  --padding: 15px;
-  --margin-top: 50px; /* רווח מלמעלה */
-  --title-padding-right: 20px; /* רווח מהקצה הימני */
-}
-#error-message {
-  margin-top: 10px;
-  font-weight: bold;
+  --text-color: rgb(0, 0, 0);      /* צבע טקסט */
+  --h1-size: 32px;                   /* גודל פונט לכותרת ראשונה */
+  --h2-size: 24px;                   /* גודל פונט לכותרת שנייה */
+  --p-size: 19px;                    /* גודל פונט לפסקאות */
+  --padding: 15px;                   /* ריפוד כללי */
+  --margin-top: 50px;                /* רווח מלמעלה */
+  --title-padding-right: 20px;       /* רווח מהקצה הימני */
 }
 
-
-/* עיצוב כללי ל-div */
+/* עיצוב כללי ל content-box*/
 .content-box {
-  color: var(--text-color);
-  padding: var(--padding);
-  text-align: center;
-  width: 80%;
-  margin: var(--margin-top) auto 0px; /* הוספת רווח מלמעלה */
+  color: var(--text-color);           /* צבע הטקסט מהמשתנה */
+  padding: var(--padding);            /* ריפוד פנימי כללי */
+  text-align: center;                 /* יישור מרכזי של תוכן ברירת מחדל */
+  width: 80%;                         /* רוחב div – 80% מרוחב ההורה */
+  margin: var(--margin-top) auto 0px; /* רווח עליון קבוע, אוטומטי בצדדים ליישור אמצע */
 }
 
 /* עיצוב כותרות ופסקאות - מיושרים לימין עם רווח */
@@ -28,27 +24,23 @@
   text-align: right; /* מיישר לימין */
   padding-right: var(--title-padding-right); /* רווח מהקצה */
 }
-
-/* עיצוב טקסט */
+/* עיצוב הכותרת */
 .content-box h1 {
   font-size: var(--h1-size);
-  margin-bottom: 80px;
+  margin-bottom: 80px;          /* רווח מתחת לכותרת */
   color: #784778;
   font-family: "Times New Roman", serif;
   box-shadow: 5px 5px 15px rgba(124, 124, 124, 0.4); /* צל כחול רך */
   display: inline-block; /* הופך את האלמנט לקופסה המתאימה לגודל התוכן */
   padding: 20px 30px; /* מוסיף קצת רווח מסביב לטקסט */
 }
-
-
 .content-box h2 {
   font-size: var(--h2-size);
   margin-bottom: 0px;
-
 }
 .content-box p {
-  font-size: var(--p-size);
-  line-height: 1.6;
+  font-size: var(--p-size);        /* גודל טקסט לפסקה מתוך משתנה */
+  line-height: 1.6;        /* מרווח בין שורות */  
 }
 
 /* הזזת הפסקה שמאלה */
@@ -56,6 +48,7 @@
   margin-right: auto; /* מונע יישור לימין ומזיז את הפסקה שמאלה */
   padding-right: 0; /* מבטל את הרווח מהקצה הימני */
 }
+/* --------------------1 רשימות 2 3 ----------------- */
 .list {
   direction: rtl;
   text-align: right;
@@ -65,18 +58,18 @@
   font-size: 20px;
   font-family: Arial, sans-serif;
 }
+/* ---------------------------כותרת לאודות ותמיכה--------------------------- */
 #title-about {
-  font-size: 32px;
-  color: #2c3e50;
-  font-weight: 700;
-  text-align: right;
-  border-right: 5px solid #3498db;
-  padding-right: 15px;
-  margin-bottom: 30px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 32px; /* גודל פונט גדול */
+color: #2c3e50; /* צבע טקסט כהה */
+font-weight: 700; /* מודגש */
+text-align: right; /* יישור לימין */
+border-right: 5px solid #3498db; /* קו ימין כחול */
+padding-right: 15px;    /* רווח מהקו */
+margin-bottom: 30px;    /* רווח מתחת */
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* גופן מודרני */
 }
-
-/* ----------------------------- */
+/* ------------מדגיש ------------- */
 strong {
   color: var(--highlight-color);
   font-weight: var(--highlight-weight);
@@ -88,72 +81,57 @@ strong {
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: Arial, sans-serif;
+body { 
+  font-family: Arial, sans-serif;               /* גופן קריא ונפוץ */
   padding: 60px 0; /* ריווח עליון ותחתון */
-  background-color: antiquewhite;
-  text-align: left;
-  height: 100%; /* גורם לכל העמוד למלא את כל גובה המסך */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
- 
-  
+  background-color: antiquewhite;       
+  text-align: left;              /* יישור טקסט לשמאל */
+  height: 100%;                  /* גורם לכל העמוד למלא את כל גובה המסך */
+  display: flex;                 /* תצוגה גמישה */
+  flex-direction: column;         /* פריסה אנכית */
+  align-items: center;           /* ממרכז את התוכן לרוחב */
 }
 /* קונטיינר ראשי */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
 h1{
   text-align: center;
 }
-/* כותרת */
+/*  ---------------כותרת עליונה למעלה----------------------------------*/
 .header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  width: 100%;        /* רוחב מלא */
+  position: fixed;    /* מקובע למסך גם בגלילה */
+  top: 0;            /* מוצמד לחלק העליון */
+  left: 50%;         /* ממורכז אופקית יחסית למסך */
+  transform: translateX(-50%);           /* תרגום למרכז מדויק */
+  display: flex;      
+  justify-content: space-between;     /* ריווח בין אלמנטים */
+  align-items: center;               /* מיישר תוכן אנכית למרכז */
   background: linear-gradient(135deg, #b972af, #071f38);
   color: white;
-  padding: 10px 30px;
+  padding: 10px 30px;                   /* ריפוד פנימי – למעלה/למטה 10px, ימין/שמאל 30px */
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  z-index: 1000;         /* מוודא שהאלמנט מעל כל השאר */
 }
+/* ----------------------------דרך לחופש כלכלי Inon na---------------------- */
 .logo {
-  font-size: 20px;
+  font-size: 18px;  /* גודל הטקס */
   font-weight: bold;
 }
-.buttons {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
+/* --------------------------עיצוב הרשמה והתחברות והתנתקות---------------------------- */
 .btn {
-  padding: 10px 20px;
-  font-size: 16px;
-  border-radius: 25px;
-  text-decoration: none;
-  margin: 5px;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  display: inline-block;
+padding: 10px 20px;           /* ריפוד פנימי – גובה ורוחב */
+font-size: 16px;              /* גודל טקסט קריא ונעים */
+border-radius: 25px;          /* פינות מעוגלות לכפתור עגול */
+text-decoration: none;        /* ללא קו תחתון (לקישורים) */
+margin: 5px;                  /* רווח חיצוני מכל צד */
+transition: all 0.3s ease;    /* מעבר חלק באנימציה */
+cursor: pointer;              /* סמן עכבר משתנה ליד */
+display: inline-block;        /* אלמנט שומר על גובה ורוחב ומתנהג כמו בלוק */
 }
 
 .btn-login, .btn-logout {
   background-color: #ffffff;
   color: #007bff;
-  border: 1px solid #007bff;
+  border: 1px solid #61a9f6;
 }
 
 .btn-login:hover, .btn-logout:hover {
@@ -163,14 +141,14 @@ h1{
 }
 
 .btn-register {
-  background-color: #ca6f5a;
+  background-color: #dd8407;
   color: white;
-  border: 1px solid #8e6a62;
+  border: 1px solid #c58bce;
 }
 
 .btn-register:hover {
-  background-color: #000000;
-  color: rgb(0, 255, 98);
+  background-color: #d0a432a7;
+  color: rgb(0, 0, 0);
   transform: scale(1.05);
 }
 
@@ -188,50 +166,44 @@ h1{
 #logout-btn {
   margin-right: 10px;
 }
-
+/* ------------------------------כותרת--------------------------------- */
 #title {
   background: linear-gradient(135deg, #7a5d92, #4887c6); /* גוון עמוק יותר ליוקרה */
   color: #fff;
-  padding: 20px 60px;
-  margin: 120px auto 30px;
-  text-align: center;
-  border-radius: 25px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 42px;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  width: fit-content;
-  border: 3px solid #bcaee4; /* מסגרת בגוון פנינה סגול */
-  box-shadow: 6px 6px 15px rgba(64, 103, 152, 0.4); /* צל מעודן להבלטה */
+  padding: 20px 60px;                       /* ריפוד פנימי – גובה ורוחב */
+  margin: 120px auto 30px;                 /* רווח עליון גדול, אוטומטי צדדים, תחתון קטן */
+  text-align: center;                     /* יישור טקסט למרכז */
+  border-radius: 25px;                   /* פינות מעוגלות */
+  font-family: 'Poppins', sans-serif;     /* גופן נקי */
+  font-size: 42px;                    /* גודל פונט גדול ובולט */
+  font-weight: bold;                 /* טקסט מודגש */
+  text-transform: uppercase;           /* אותיות גדולות */
+  letter-spacing: 3px;                /* רווח בין אותיות */
+  width: fit-content;                 /* רוחב בהתאם לתוכן */
+  border: 3px solid #bcaee4;          /* מסגרת בגוון פנינה סגול */
+  box-shadow: 6px 6px 15px rgba(64, 103, 152, 0.4);     /* צל מעודן להבלטה */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.left-image {
-  float: left;
-  margin-left: 150px; /* מרווח מצד שמאל */
-  margin-right: 20px; /* מרווח מצד ימין כדי למנוע שהטקסט ייגע בתמונה */
-  margin-top: -35px; 
-  width: 10%;
-}
-
 h3{
   color: #151111;
   font-size: 18px;
 }
+/* ----------רווח בתחתית----------- */
 .padding{
   padding-bottom: 200px; /* מוסיף רווח גדול בתחתית העמוד */
 }
+/* ---------מעלים את הקו של הקישור-------- */
 a{
   text-decoration: none;
   color: rgb(108, 108, 1);
 }
+
 .link-above{
   display: flex;
   justify-content: center; /* מרכז את הקישורים אופקית */
   align-items: center;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 15px;      /* רווח בין פריטים */
+  margin-bottom: 10px;        /* רווח מתחת */
   direction: rtl; /* אם אתה משתמש בעברית – זה חשוב */
 }
 
@@ -391,7 +363,7 @@ margin-bottom: 80px; /* הרווח מתחת */
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
-.op.hidden {
+.Header-Background.hidden {
   transform: translate(-50%, -100%);
   opacity: 0;
 }
@@ -499,12 +471,16 @@ th, td {
   border: 1px solid #ddd; /* גבול דק לכל התא */
 }
 th {
-  background-color: #daeaa0; /* צבע רקע לכותרת */
-  color: white; /* צבע טקסט של הכותרת */
+  background-color: #a0c9ea; /* צבע רקע לכותרת */
+  color: rgb(33, 18, 18); /* צבע טקסט של הכותרת */
   font-weight: bold; /* כותרת מודגשת */
 }
 
 td {
   font-size: 14px; /* גודל טקסט בתאים */
   color: #333; /* צבע טקסט בתאים */
+}
+#error-message {
+  margin-top: 10px; /* רווח מעל האלמנט */
+  font-weight: bold;/* הופך את הטקסט למודגש */
 }
