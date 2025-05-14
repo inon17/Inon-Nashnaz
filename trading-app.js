@@ -100,45 +100,36 @@ function calculateInvestment() {
 // הרשמה
 function register(event) {
   event.preventDefault();
-
   const username = document.getElementById("register-username").value.trim();
   const email = document.getElementById("register-email").value.trim();
   const age = parseInt(document.getElementById("register-age").value);
   const password = document.getElementById("register-password").value;
   const errorMessage = document.getElementById("error-message");
-
   errorMessage.textContent = "";
   errorMessage.style.color = "red";
-
   if (!username || !email || !password || isNaN(age)) {
     errorMessage.textContent = "אנא מלא את כל השדות";
     return;
   }
-
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
     errorMessage.textContent = "האימייל אינו תקין";
     return;
   }
-
   if (age < 16 || age > 120) {
     errorMessage.textContent = "הגיל חייב להיות בין 16 ל־120";
     return;
   }
-
   if (password.length < 6) {
     errorMessage.textContent = "הסיסמה חייבת להכיל לפחות 6 תווים";
     return;
   }
-
   if (localStorage.getItem(username)) {
     errorMessage.textContent = "שם משתמש זה כבר קיים";
     return;
   }
-
   const userData = { email, age, password };
   localStorage.setItem(username, JSON.stringify(userData));
-
   errorMessage.style.color = "green";
   errorMessage.textContent = "ההרשמה הצליחה! מועבר לטופס התחברות...";
   setTimeout(() => {
