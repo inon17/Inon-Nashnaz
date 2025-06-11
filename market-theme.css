@@ -81,13 +81,9 @@ strong {
   padding: 0;
   box-sizing: border-box;
 }
-body { 
-  margin: 0;
-  background: url('BEERSHEVS.jpg') no-repeat   ;
-  background-size: cover;
-  font-family: Arial, sans-serif;               
+body {             
   padding: 60px 0; /* ריווח עליון ותחתון */
-     
+  border-color: aliceblue;
   text-align: left;              /* יישור טקסט לשמאל */
   height: 100%;                  /* גורם לכל העמוד למלא את כל גובה המסך */
   display: flex;                 /* תצוגה גמישה */
@@ -314,20 +310,20 @@ margin-bottom: 80px; /* הרווח מתחת */
 
 .intro-container h2 {
   font-size: 28px;
-  color: #ff0000;
+  color: #000000;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .intro-container h3 {
   font-size: 22px;
-  color: #ff0000;
+  color: #110a0a;
   margin-top: 20px;
 }
 
 .intro-container p {
   font-size: 18px;
-  color: #ff0000;
+  color: #1f1c1c;
   line-height: 1.6;
   max-width: 80%;
   margin: 10px auto;
@@ -335,7 +331,7 @@ margin-bottom: 80px; /* הרווח מתחת */
 .intro-container ul {
   list-style: none;
   padding: 0;
-  color: #ff0000;
+  color: #110a0a;
   max-width: 70%;
   margin: auto;
 }
@@ -344,7 +340,7 @@ margin-bottom: 80px; /* הרווח מתחת */
   font-size: 18px;
   margin: 10px 0;
   padding: 10px;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(233, 217, 217, 0.6);
   border-radius: 10px;
   transition: all 0.3s;
 }
