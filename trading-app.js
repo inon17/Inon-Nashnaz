@@ -116,7 +116,7 @@ function register(event) {
     errorMessage.textContent = "האימייל אינו תקין";
     return;
   }
-  if (age < 16 || age > 120) {
+  if (age < 18 || age > 120) {
     errorMessage.textContent = "הגיל חייב להיות בין 16 ל־120";
     return;
   }
@@ -126,6 +126,10 @@ function register(event) {
   }
   if (localStorage.getItem(username)) {
     errorMessage.textContent = "שם משתמש זה כבר קיים";
+    return;
+  }
+    if (age < 18 || age > 120) {
+    
     return;
   }
   const userData = { email, age, password };
@@ -204,5 +208,4 @@ function displayUsername() {
 }
 
 window.onload = displayUsername;
-
 
