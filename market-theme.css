@@ -82,9 +82,12 @@ strong {
   box-sizing: border-box;
 }
 body { 
-  font-family: Arial, sans-serif;               /* גופן קריא ונפוץ */
+  margin: 0;
+  background: url('BEERSHEVS.jpg') no-repeat   ;
+  background-size: cover;
+  font-family: Arial, sans-serif;               
   padding: 60px 0; /* ריווח עליון ותחתון */
-  background-color: antiquewhite;       
+     
   text-align: left;              /* יישור טקסט לשמאל */
   height: 100%;                  /* גורם לכל העמוד למלא את כל גובה המסך */
   display: flex;                 /* תצוגה גמישה */
