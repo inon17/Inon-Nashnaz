@@ -82,6 +82,7 @@ strong {
   box-sizing: border-box;
 }
 body {             
+  background-color: #ffffff;     /* explicit white page (phones in dark mode) */
   padding: 60px 0; /* ריווח עליון ותחתון */
   border-color: aliceblue;
   text-align: left;              /* יישור טקסט לשמאל */
@@ -114,56 +115,6 @@ h1{
 .logo {
   font-size: 18px;  /* גודל הטקס */
   font-weight: bold;
-}
-/* --------------------------עיצוב הרשמה והתחברות והתנתקות---------------------------- */
-.btn {
-padding: 10px 20px;           /* ריפוד פנימי – גובה ורוחב */
-font-size: 16px;              /* גודל טקסט קריא ונעים */
-border-radius: 25px;          /* פינות מעוגלות לכפתור עגול */
-text-decoration: none;        /* ללא קו תחתון (לקישורים) */
-margin: 5px;                  /* רווח חיצוני מכל צד */
-transition: all 0.3s ease;    /* מעבר חלק באנימציה */
-cursor: pointer;              /* סמן עכבר משתנה ליד */
-display: inline-block;        /* אלמנט שומר על גובה ורוחב ומתנהג כמו בלוק */
-}
-
-.btn-login, .btn-logout {
-  background-color: #ffffff;
-  color: #007bff;
-  border: 1px solid #61a9f6;
-}
-
-.btn-login:hover, .btn-logout:hover {
-  background-color: #007bff;
-  color: white;
-  transform: scale(1.05);
-}
-
-.btn-register {
-  background-color: #dd8407;
-  color: white;
-  border: 1px solid #c58bce;
-}
-
-.btn-register:hover {
-  background-color: #d0a432a7;
-  color: rgb(0, 0, 0);
-  transform: scale(1.05);
-}
-
-.user-display {
-  color: white;
-  font-size: 18px;
-  margin-left: 10px;
-}
-
-.user-section {
-  display: flex;
-  align-items: center;
-}
-
-#logout-btn {
-  margin-right: 10px;
 }
 /* ------------------------------כותרת--------------------------------- */
 header {
@@ -236,6 +187,7 @@ a{
 }
 .box {
   display: flex;
+  text-decoration: none;     /* link without underline */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -370,8 +322,8 @@ margin-bottom: 80px; /* הרווח מתחת */
   padding: 20px; /* Padding קטן יותר */
   border-radius: 15px;
   text-align: center;
-  width: 600px; /* רוחב קטן יותר */
-  height: 300px; /* גובה קטן יותר */
+  width: 100%;
+  max-width: 600px; /* never wider than the screen */
   margin: 50px auto; /* יוצר מרווח בצדדים ומרכז את האלמנט */
   color: #000000c9; /* טקסט שחור */
   direction: rtl;
@@ -482,4 +434,141 @@ td {
 #error-message {
   margin-top: 10px; /* רווח מעל האלמנט */
   font-weight: bold;/* הופך את הטקסט למודגש */
+}
+/* images never wider than the screen */
+img, video {
+  max-width: 100%;
+}
+
+/* ============================ Phone layout ============================ */
+@media (max-width: 700px) {
+  :root {
+    --h1-size: 24px;
+    --h2-size: 20px;
+    --p-size: 17px;
+    --margin-top: 20px;
+    --title-padding-right: 0;
+  }
+  body {
+    padding: 50px 0 30px;
+  }
+
+  /* top bar */
+  .header1 {
+    padding: 8px 12px;
+    gap: 8px;
+  }
+  .logo {
+    font-size: 15px;
+  }
+  .link-above {
+    gap: 4px;
+    margin-bottom: 0;
+  }
+  .icon {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+  .Header-Background {
+    padding: 12px 16px;
+    font-size: 15px;
+  }
+
+  /* main title */
+  header {
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding: 14px 20px;
+    margin: 80px 16px 16px;
+    width: auto;
+    border-radius: 18px;
+  }
+
+  /* video */
+  .cont {
+    width: calc(100vw - 32px);
+    aspect-ratio: 16/9;
+  }
+
+  /* intro text */
+  .intro-container {
+    width: 100%;
+    padding: 24px 16px;
+  }
+  .intro-container h2 {
+    font-size: 24px;
+  }
+  .intro-container h3 {
+    font-size: 19px;
+  }
+  .intro-container p,
+  .intro-container ul {
+    max-width: 100%;
+    font-size: 17px;
+  }
+  .intro-container li {
+    font-size: 16px;
+  }
+
+  /* three course buttons: one under the other, full width */
+  .con {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding: 0 16px;
+  }
+  .box {
+    width: 100%;
+    max-width: 360px;
+    height: 76px;
+    font-size: 19px;
+    border-radius: 38px;
+  }
+  .middle {
+    margin: 0;
+  }
+
+  /* course pages */
+  .content-box {
+    width: 100%;
+    padding: 16px;
+    margin-top: 40px;
+  }
+  .content-box h1 {
+    margin-bottom: 24px;
+    padding: 12px 16px;
+  }
+  .list {
+    margin-right: 20px;
+    font-size: 17px;
+  }
+  .image {
+    width: 100%;
+    min-width: 0;
+  }
+  .flip-container {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  /* wide tables scroll sideways inside themselves, not the whole page */
+  table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+  th, td {
+    padding: 6px;
+  }
+
+  /* about / support */
+  .border-about {
+    width: calc(100% - 32px);
+    max-width: none;
+    padding: 24px 16px;
+  }
+  #title-about {
+    font-size: 24px;
+  }
 }
